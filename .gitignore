@@ -1,0 +1,37 @@
+node_modules
+.DS_store
+
+/build
+/public/build
+/server-build
+.env
+.env.*
+.cache
+.mcp.json
+.claude
+
+# Easy way to create temporary files/folders that won't accidentally be added to git
+*.local.*
+.vercel
+
+# Backups
+data.sql
+schema.sql
+roles.sql
+
+# Test artifacts and results
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/tests/fixtures/email/
+/tests/fixtures/uploaded/
+/tests/fixtures/openimg/
+/coverage
+.nyc_output/
+
+# Generated files
+/app/components/ui/icons
+.react-router/
+
+# Cache files
+/other/cache.db
