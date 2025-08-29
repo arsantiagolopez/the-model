@@ -1,0 +1,1 @@
+ALTER TABLE "matches" ADD CONSTRAINT "matches_match_id_unique" UNIQUE("match_id");

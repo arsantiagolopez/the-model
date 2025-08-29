@@ -6,15 +6,13 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-import { rootAuthLoader } from "@clerk/react-router/ssr.server";
-import { ClerkThemeProvider } from "~/providers/clerk-theme-provider";
-import { ThemeProvider } from "next-themes";
 
 import type { Route } from "./+types/root";
 import "./styles/index.css";
+import { PreferencesProvider } from "./contexts/preferences-context";
 
 export async function loader(args: Route.LoaderArgs) {
-  return rootAuthLoader(args);
+  return {};
 }
 
 export const links: Route.LinksFunction = () => [
@@ -39,10 +37,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="min-h-dvh">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
+      <body className="min-h-dvh dark">
+        {children}
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -50,11 +46,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App({ loaderData }: Route.ComponentProps) {
+export default function App() {
   return (
-    <ClerkThemeProvider loaderData={loaderData}>
+    <PreferencesProvider>
       <Outlet />
-    </ClerkThemeProvider>
+    </PreferencesProvider>
   );
 }
 
