@@ -1,16 +1,17 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { useTheme } from "next-themes"
-import { Monitor, Moon, Sun } from "lucide-react"
+import { useState } from "react";
+import { useTheme } from "next-themes";
+import { Monitor, Moon, Sun } from "lucide-react";
 
 export function ThemeSwitch() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  // Initialize mounted state immediately after first render
+  if (!mounted) {
+    setMounted(true);
+  }
 
   if (!mounted) {
     return (
