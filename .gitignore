@@ -35,3 +35,12 @@ roles.sql
 
 # Cache files
 /other/cache.db
+
+# Scraped tennis data
+/data/
+/test-data/
+/test-cache/
+/test-logs/
+
+# Design inspiration assets
+/design-inspiration/
