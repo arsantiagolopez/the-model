@@ -47,7 +47,44 @@ export default function HomeRoute() {
           <div>You're signed out</div>
         </SignedOut>
         <SignedIn>
-          <div>You're signed in.</div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold tracking-tight">Welcome to The Model</h2>
+              <p className="text-muted-foreground">Enterprise tennis data scraping and AI betting predictions</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link
+                to="/admin/scraper"
+                className="block p-6 bg-card hover:bg-accent hover:text-accent-foreground rounded-lg border transition-colors"
+              >
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">🎾 Tennis Scraper Admin</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Monitor and test the enterprise tennis scraping system. Run scrapers, view logs, and validate data quality.
+                  </p>
+                </div>
+              </Link>
+
+              <div className="p-6 bg-card rounded-lg border opacity-50">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">📊 AI Predictions</h3>
+                  <p className="text-sm text-muted-foreground">
+                    View AI-generated betting predictions based on scraped tennis data. (Coming Soon)
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-6 bg-card rounded-lg border opacity-50">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold">💰 Betting Analysis</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Track odds movements and identify profitable betting opportunities. (Coming Soon)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </SignedIn>
       </main>
     </div>
